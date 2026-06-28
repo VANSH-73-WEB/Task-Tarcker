@@ -12,7 +12,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://task-tarcker.vercel.app/'
+  'https://task-tarcker.vercel.app'
 ];
 
 app.use(cors({
