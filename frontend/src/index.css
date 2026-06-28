@@ -1,0 +1,90 @@
+/* ─── Design Tokens ──────────────────────────────────────────────────────────── */
+:root {
+  --bg-base: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-elevated: #273548;
+  --bg-overlay: #334155;
+  --border: #334155;
+  --border-light: #475569;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --indigo: #6366f1;
+  --indigo-light: #818cf8;
+  --indigo-dim: rgba(99, 102, 241, 0.15);
+
+  --green: #10b981;
+  --green-dim: rgba(16, 185, 129, 0.15);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245, 158, 11, 0.15);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.15);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  --transition: 150ms ease;
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ─── Utilities ──────────────────────────────────────────────────────────────── */
+button { cursor: pointer; font-family: inherit; border: none; outline: none; }
+input, textarea, select { font-family: inherit; outline: none; }
+a { text-decoration: none; color: inherit; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fade-in { animation: fadeIn 0.25s ease forwards; }
+.slide-in { animation: slideIn 0.25s ease forwards; }
